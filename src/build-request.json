@@ -1,0 +1,86 @@
+{
+  "kind": "build_request",
+  "title": "Add Escoffiers name text alongside logo in site branding",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-17",
+      "text": "Update the site header branding so it displays both the Escoffiers logo image and the company name text together in the left brand area, while keeping the entire brand area clickable and linked to the Home route (`/`). Use the existing logo asset at `/assets/generated/escoffiers-wordmark.dim_1200x300.png` and add visible text reading \"Escoffiers\" next to (or under) the logo, ensuring proper vertical centering within the existing `h-16` header and no layout regressions for desktop or mobile.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-9"
+        ],
+        "quotes": [
+          "Please add the escoffiers name and the logo"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Header brand area shows the existing logo image and visible text \"Escoffiers\" together.",
+        "Clicking anywhere on the brand area navigates to `/`.",
+        "Branding remains vertically centered within the `h-16` header.",
+        "Desktop and mobile header layouts remain intact (no overlap with nav/login/menu).",
+        "Brand text has sufficient contrast and is readable on the header background."
+      ]
+    },
+    {
+      "id": "REQ-18",
+      "text": "Update the site footer branding block to display both the Escoffiers logo image and the company name text together (\"Escoffiers\") while continuing to use the existing logo asset at `/assets/generated/escoffiers-wordmark.dim_1200x300.png`. The name text should be visually aligned with the logo and remain readable across responsive breakpoints.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-9"
+        ],
+        "quotes": [
+          "Please add the escoffiers name and the logo"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Footer branding shows the existing logo image and visible text \"Escoffiers\" together.",
+        "Footer branding remains readable and well-aligned on mobile and desktop.",
+        "No changes to footer navigation links or contact info behavior."
+      ]
+    },
+    {
+      "id": "REQ-19",
+      "text": "Update the Home page hero branding block so it displays both the existing Escoffiers logo image and visible company name text (\"Escoffiers\") together near the top of the hero content. Keep the current hero headline and page layout unchanged aside from this branding addition.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-9"
+        ],
+        "quotes": [
+          "Please add the escoffiers name and the logo"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Home hero shows the existing logo image and visible text \"Escoffiers\" together above the hero headline.",
+        "Hero headline remains exactly: \"Building a Different Business Path\".",
+        "No visual overlap occurs between the hero branding, headline, and body text at common breakpoints."
+      ]
+    }
+  ],
+  "constraints": [
+    "Frontend immutable paths must not be edited: `frontend/src/hooks/useInternetIdentity.ts`, `frontend/src/hooks/useInternetIdentity.tsx`, `frontend/src/hooks/useActor.ts`, `frontend/src/main.tsx`, and `frontend/src/components/ui/*`.",
+    "Keep using the existing logo asset path `/assets/generated/escoffiers-wordmark.dim_1200x300.png`; do not route logo delivery through the backend."
+  ],
+  "nonGoals": [
+    "Creating or modifying Motoko backend functionality.",
+    "Changing site navigation structure or adding/removing pages.",
+    "Designing a new logo or generating new brand assets."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
+  }
+}

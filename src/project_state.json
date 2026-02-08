@@ -1,0 +1,218 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 17,
+  "summary": "Website project for Escoffiers Global Solutions Pvt Ltd (India), using the already purchased domain escoffiers.com.",
+  "architectural_notes": [
+    "Domain already purchased: escoffiers.com",
+    "Domain registrar/DNS managed in Hostinger for escoffiers.com.",
+    "Decision: continue on Caffeine free tier for now; upgrade later if needed.",
+    "Domain connection approach discussed: point Hostinger DNS to IC/Caffeine deployment (icp0.io) and switch away from Hostinger Website Builder page.",
+    "Decision: Home page hero headline text set to \"Building a Different Business Path\"."
+  ],
+  "known_issues": [
+    "Build failed during component scan/header update with: “⚠️ An internal configuration issue happened. Please contact the Caffeine team.”"
+  ],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-create-a-responsive-marketing-website-for-escoffiers-global-solutions-pvt-ltd-with-clear-navigation-and-content-sections-suitable-for-a-consulting-company",
+      "title": "Create a responsive marketing website for Escoffiers Global Solutions Pvt Ltd with clear navigation and content sections suitable for a consulting company.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-core-pages-sections-with-the-provided-business-content-home-headline-brief-intro-about-us-the-longer-about-us-copy-services-list-and-short-descriptions-of-core-services-and-contact-contact-details-inquiry-form",
+      "title": "Add core pages/sections with the provided business content: Home (headline + brief intro), About Us (the longer About Us copy), Services (list and short descriptions of core services), and Contact (contact details + inquiry form).",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-backend-backed-contact-inquiry-submission-flow-store-inquiries-in-the-motoko-canister-and-expose-read-endpoints-for-listing-and-viewing-inquiries",
+      "title": "Implement a backend-backed contact inquiry submission flow: store inquiries in the Motoko canister and expose read endpoints for listing and viewing inquiries.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-simple-admin-only-page-route-in-the-frontend-to-view-submitted-inquiries-accessible-only-when-the-user-is-authenticated-with-internet-identity",
+      "title": "Add a simple admin-only page/route in the frontend to view submitted inquiries, accessible only when the user is authenticated with Internet Identity.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-provide-a-coherent-visual-theme-colors-typography-spacing-and-component-style-appropriate-for-a-premium-hospitality-restaurant-consulting-brand-and-apply-it-consistently-across-all-pages",
+      "title": "Provide a coherent visual theme (colors, typography, spacing, and component style) appropriate for a premium hospitality/restaurant consulting brand, and apply it consistently across all pages.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-basic-seo-and-sharing-metadata-for-escoffiers-com-page-titles-meta-descriptions-and-open-graph-defaults-and-include-a-site-favicon",
+      "title": "Add basic SEO and sharing metadata for escoffiers.com (page titles, meta descriptions, and Open Graph defaults) and include a site favicon.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-document-the-steps-required-to-connect-the-already-purchased-domain-escoffiers-com-to-the-deployed-internet-computer-frontend-dns-records-and-where-to-point-them-without-using-third-party-hosting",
+      "title": "Document the steps required to connect the already purchased domain escoffiers.com to the deployed Internet Computer frontend (DNS records and where to point them), without using third-party hosting.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-written-user-facing-marketing-copy-on-the-existing-public-pages-home-about-services-contact-so-each-page-contains-complete-polished-professional-english-content-aligned-with-the-previously-provided-site-structure-hero-headline-sub-text-about-summary-services-descriptions-contact-intro-keep-the-current-page-layouts-components-unless-small-copy-driven-adjustments-are-needed",
+      "title": "Update the written (user-facing) marketing copy on the existing public pages (Home, About, Services, Contact) so each page contains complete, polished, professional English content aligned with the previously provided site structure (hero headline + sub-text, About summary, services descriptions, contact intro). Keep the current page layouts/components unless small copy-driven adjustments are needed.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-new-public-recruitment-page-that-provides-full-written-english-content-for-recruitment-services-based-on-the-provided-recruitment-page-structure-introduction-domestic-international-hiring-what-we-offer-blue-collar-roles-white-collar-roles-our-process-documentation-compliance-support-employers-submit-a-requirement-job-seekers-apply-now-include-appropriate-page-metadata-via-the-existing-seo-meta-pattern",
+      "title": "Add a new public Recruitment page that provides full written English content for recruitment services, based on the provided Recruitment page structure: Introduction (Domestic + International Hiring), What We Offer, Blue-collar Roles, White-collar Roles, Our Process, Documentation & Compliance Support, Employers: Submit a Requirement, Job Seekers: Apply Now. Include appropriate page metadata via the existing SEO/meta pattern.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-expose-the-recruitment-page-in-site-navigation-by-adding-a-recruitment-link-alongside-the-existing-public-nav-links-including-in-the-header-navigation-desktop-and-mobile-and-the-footer-quick-links-list",
+      "title": "Expose the Recruitment page in site navigation by adding a \"Recruitment\" link alongside the existing public nav links, including in the header navigation (desktop and mobile) and the footer \"Quick Links\" list.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-site-wide-color-tokens-so-the-overall-background-palette-feels-eco-friendly-nature-inspired-greens-earthy-neutrals-while-maintaining-strong-contrast-and-readability-across-all-existing-pages-and-components",
+      "title": "Update the site-wide color tokens so the overall background palette feels eco-friendly (nature-inspired greens/earthy neutrals) while maintaining strong contrast and readability across all existing pages and components.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-the-current-header-logo-image-with-the-circular-eco-green-escoffiers-logo-so-the-logo-displayed-in-the-site-header-uses-the-new-circular-asset-instead-of-assets-generated-escoffiers-wordmark-dim-1200x300-png-keep-the-logo-as-a-clickable-link-to-the-home-route-and-ensure-it-renders-crisply-and-is-vertically-centered-within-the-existing-h-16-header",
+      "title": "Replace the current header logo image with the circular eco‑green Escoffiers logo so the logo displayed in the site header uses the new circular asset instead of `/assets/generated/escoffiers-wordmark.dim_1200x300.png`. Keep the logo as a clickable link to the home route (`/`) and ensure it renders crisply and is vertically centered within the existing `h-16` header.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-the-new-circular-eco-green-logo-image-as-a-static-frontend-asset-under-frontend-public-assets-generated-and-reference-it-from-the-header-without-routing-it-through-the-backend",
+      "title": "Add the new circular eco‑green logo image as a static frontend asset under `frontend/public/assets/generated/` and reference it from the header without routing it through the backend.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-site-header-branding-to-keep-the-old-logo-by-changing-the-header-logo-image-back-to-the-existing-wordmark-asset-at-assets-generated-escoffiers-wordmark-dim-1200x300-png-instead-of-the-circular-logo-ensure-the-logo-remains-a-clickable-link-to-the-home-route-and-is-vertically-centered-within-the-existing-h-16-header-without-breaking-the-desktop-or-mobile-header-layouts",
+      "title": "Update the site header branding to keep the old logo by changing the header logo image back to the existing wordmark asset at `/assets/generated/escoffiers-wordmark.dim_1200x300.png` (instead of the circular logo). Ensure the logo remains a clickable link to the home route (`/`) and is vertically centered within the existing `h-16` header without breaking the desktop or mobile header layouts.",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-home-page-hero-headline-the-main-h1-in-the-hero-section-to-exactly-building-a-different-business-path",
+      "title": "Update the Home page hero headline (the main <h1> in the Hero section) to exactly: \"Building a Different Business Path\".",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-site-header-branding-so-it-displays-both-the-escoffiers-logo-image-and-the-company-name-text-together-in-the-left-brand-area-while-keeping-the-entire-brand-area-clickable-and-linked-to-the-home-route-use-the-existing-logo-asset-at-assets-generated-escoffiers-wordmark-dim-1200x300-png-and-add-visible-text-reading-escoffiers-next-to-or-under-the-logo-ensuring-proper-vertical-centering-within-the-existing-h-16-header-and-no-layout-regressions-for-desktop-or-mobile",
+      "title": "Update the site header branding so it displays both the Escoffiers logo image and the company name text together in the left brand area, while keeping the entire brand area clickable and linked to the Home route (`/`). Use the existing logo asset at `/assets/generated/escoffiers-wordmark.dim_1200x300.png` and add visible text reading \"Escoffiers\" next to (or under) the logo, ensuring proper vertical centering within the existing `h-16` header and no layout regressions for desktop or mobile.",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-site-footer-branding-block-to-display-both-the-escoffiers-logo-image-and-the-company-name-text-together-escoffiers-while-continuing-to-use-the-existing-logo-asset-at-assets-generated-escoffiers-wordmark-dim-1200x300-png-the-name-text-should-be-visually-aligned-with-the-logo-and-remain-readable-across-responsive-breakpoints",
+      "title": "Update the site footer branding block to display both the Escoffiers logo image and the company name text together (\"Escoffiers\") while continuing to use the existing logo asset at `/assets/generated/escoffiers-wordmark.dim_1200x300.png`. The name text should be visually aligned with the logo and remain readable across responsive breakpoints.",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-home-page-hero-branding-block-so-it-displays-both-the-existing-escoffiers-logo-image-and-visible-company-name-text-escoffiers-together-near-the-top-of-the-hero-content-keep-the-current-hero-headline-and-page-layout-unchanged-aside-from-this-branding-addition",
+      "title": "Update the Home page hero branding block so it displays both the existing Escoffiers logo image and visible company name text (\"Escoffiers\") together near the top of the hero content. Keep the current hero headline and page layout unchanged aside from this branding addition.",
+      "reqIds": [
+        "REQ-19"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Design and build a company website for Escoffiers Global Solutions Pvt Ltd using the domain escoffiers.com.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Prepare full written content for each core page (Home, About, Services, Recruitment, Contact) based on the provided site structure.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Add Employer Login (Internet Identity) and, after login, show a simple Employer Requirement Submission form (Option A).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "On the Employer Requirement form and confirmation, clearly state recruitment requirement submission/service is completely free of cost.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Update site background color palette to an eco-friendly theme.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Update the site header to use the previously uploaded old Escoffiers logo (wordmark) instead of the newer circular logo, ensuring it remains a clickable link to Home and stays vertically centered in the existing header layout.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Ensure the previously uploaded old Escoffiers logo (wordmark) is present as a static frontend asset at `/assets/generated/escoffiers-wordmark.dim_1200x300.png` (i.e., `frontend/public/assets/generated/escoffiers-wordmark.dim_1200x300.png`) and is the logo rendered in all existing branding locations (site header, site footer, and the Home page hero logo), replacing any circular/new logo usage if still present.",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Add Escoffiers name (text) and the logo to the website branding (e.g., in the header and other key branding locations as appropriate).",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Escoffiers Global Solutions Pvt Ltd Website",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

@@ -1,0 +1,57 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Display Escoffiers name text alongside existing logo in header, footer, and home hero",
+  "requirements": [
+    {
+      "id": "REQ-17",
+      "summary": "Update header branding to show existing Escoffiers logo plus visible “Escoffiers” text in the left clickable brand area linking to /, maintaining h-16 vertical centering and responsive layout integrity.",
+      "acceptanceCriteria": [
+        "Header brand area shows the existing logo image and visible text \"Escoffiers\" together.",
+        "Clicking anywhere on the brand area navigates to `/`.",
+        "Branding remains vertically centered within the `h-16` header.",
+        "Desktop and mobile header layouts remain intact (no overlap with nav/login/menu).",
+        "Brand text has sufficient contrast and is readable on the header background."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/site/Header.tsx",
+          "operation": "modify",
+          "description": "Update the brand <Link to=\"/\"> block to include visible text \"Escoffiers\" alongside (or stacked with) the existing logo image at /assets/generated/escoffiers-wordmark.dim_1200x300.png, keeping the whole brand region clickable, vertically centered within the h-16 header, and ensuring responsive sizing/spacing prevents overlap with desktop nav and mobile login/menu."
+        }
+      ]
+    },
+    {
+      "id": "REQ-18",
+      "summary": "Update footer branding block to show existing Escoffiers logo plus visible “Escoffiers” text with responsive alignment and no changes to footer navigation/contact behavior.",
+      "acceptanceCriteria": [
+        "Footer branding shows the existing logo image and visible text \"Escoffiers\" together.",
+        "Footer branding remains readable and well-aligned on mobile and desktop.",
+        "No changes to footer navigation links or contact info behavior."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/site/Footer.tsx",
+          "operation": "modify",
+          "description": "Adjust the footer branding block to render the existing logo image at /assets/generated/escoffiers-wordmark.dim_1200x300.png together with visible text \"Escoffiers\" in a flex/stacked layout that stays aligned and readable across breakpoints, without altering any existing footer links or contact info behavior."
+        }
+      ]
+    },
+    {
+      "id": "REQ-19",
+      "summary": "Update the Home page hero branding block to show existing Escoffiers logo plus visible “Escoffiers” text above the unchanged hero headline and layout.",
+      "acceptanceCriteria": [
+        "Home hero shows the existing logo image and visible text \"Escoffiers\" together above the hero headline.",
+        "Hero headline remains exactly: \"Building a Different Business Path\".",
+        "No visual overlap occurs between the hero branding, headline, and body text at common breakpoints."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Home.tsx",
+          "operation": "modify",
+          "description": "Update the hero branding area to display the existing logo image at /assets/generated/escoffiers-wordmark.dim_1200x300.png together with visible text \"Escoffiers\" above the headline, keeping the headline text exactly unchanged and preserving the current hero layout (only adding the branding text with responsive spacing to avoid overlap)."
+        }
+      ]
+    }
+  ]
+}
