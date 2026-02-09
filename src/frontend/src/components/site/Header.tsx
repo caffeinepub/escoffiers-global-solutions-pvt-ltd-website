@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useRouterState, useNavigate } from '@tanstack/react-router';
 import Container from './Container';
+import BrandLogo from './BrandLogo';
 import LoginButton from '../auth/LoginButton';
 import AdminNavLink from '../admin/AdminNavLink';
 import { Button } from '@/components/ui/button';
@@ -37,16 +38,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <Container>
         <div className="flex h-16 items-center justify-between">
-          <Link to="/" className="flex items-center gap-3">
-            <img
-              src="/assets/generated/escoffiers-wordmark.dim_1200x300.png"
-              alt="Escoffiers"
-              className="h-10 w-auto"
-            />
-            <span className="text-xl font-semibold text-foreground hidden sm:inline">
-              Escoffiers
-            </span>
-          </Link>
+          <BrandLogo variant="logo-with-text" size="md" linkTo="/" />
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-6">

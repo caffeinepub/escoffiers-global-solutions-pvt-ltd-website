@@ -29,6 +29,15 @@ export function usePageMeta({ title, description, ogImage }: PageMetaOptions) {
         document.head.appendChild(ogDescription);
       }
       ogDescription.setAttribute('content', description);
+
+      // Also set Twitter description
+      let twitterDescription = document.querySelector('meta[name="twitter:description"]');
+      if (!twitterDescription) {
+        twitterDescription = document.createElement('meta');
+        twitterDescription.setAttribute('name', 'twitter:description');
+        document.head.appendChild(twitterDescription);
+      }
+      twitterDescription.setAttribute('content', description);
     }
 
     // Set OG title
@@ -40,6 +49,15 @@ export function usePageMeta({ title, description, ogImage }: PageMetaOptions) {
     }
     ogTitle.setAttribute('content', title);
 
+    // Set Twitter title
+    let twitterTitle = document.querySelector('meta[name="twitter:title"]');
+    if (!twitterTitle) {
+      twitterTitle = document.createElement('meta');
+      twitterTitle.setAttribute('name', 'twitter:title');
+      document.head.appendChild(twitterTitle);
+    }
+    twitterTitle.setAttribute('content', title);
+
     // Set OG image if provided
     if (ogImage) {
       let ogImageMeta = document.querySelector('meta[property="og:image"]');
@@ -49,6 +67,15 @@ export function usePageMeta({ title, description, ogImage }: PageMetaOptions) {
         document.head.appendChild(ogImageMeta);
       }
       ogImageMeta.setAttribute('content', ogImage);
+
+      // Also set Twitter image
+      let twitterImage = document.querySelector('meta[name="twitter:image"]');
+      if (!twitterImage) {
+        twitterImage = document.createElement('meta');
+        twitterImage.setAttribute('name', 'twitter:image');
+        document.head.appendChild(twitterImage);
+      }
+      twitterImage.setAttribute('content', ogImage);
     }
   }, [title, description, ogImage]);
 }

@@ -1,22 +1,20 @@
 import { Link } from '@tanstack/react-router';
 import Container from './Container';
+import BrandLogo from './BrandLogo';
 import { Mail, MapPin, Heart } from 'lucide-react';
 
 export default function Footer() {
+  const appIdentifier = typeof window !== 'undefined' 
+    ? encodeURIComponent(window.location.hostname)
+    : 'escoffiers-app';
+
   return (
     <footer className="border-t bg-muted/30">
       <Container>
         <div className="py-12 grid md:grid-cols-3 gap-8">
           <div>
-            <div className="flex items-center gap-3 mb-4">
-              <img
-                src="/assets/generated/escoffiers-wordmark.dim_1200x300.png"
-                alt="Escoffiers"
-                className="h-8 w-auto"
-              />
-              <span className="text-lg font-semibold text-foreground">
-                Escoffiers
-              </span>
+            <div className="mb-4">
+              <BrandLogo variant="logo-with-text" size="sm" linkTo="/" />
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Expert restaurant consulting and hospitality services in India since 2013.
@@ -63,9 +61,9 @@ export default function Footer() {
 
         <div className="border-t py-6 text-center text-sm text-muted-foreground">
           <p>
-            © 2026. Built with <Heart className="inline w-4 h-4 text-red-500" /> using{' '}
+            © {new Date().getFullYear()}. Built with <Heart className="inline w-4 h-4 text-red-500" /> using{' '}
             <a
-              href="https://caffeine.ai"
+              href={`https://caffeine.ai/?utm_source=Caffeine-footer&utm_medium=referral&utm_content=${appIdentifier}`}
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-foreground transition-colors font-medium"

@@ -59,7 +59,7 @@ actor {
 
   // Public contact form - accessible to everyone including guests
   public shared ({ caller }) func submitInquiry(name : Text, email : Text, message : Text) : async Nat {
-    // No authorization check - contact forms should be publicly accessible
+    // No authorization check -
     let inquiry : ContactInquiry = {
       id = nextInquiryId;
       name;

@@ -1,25 +1,39 @@
 {
   "kind": "spec_vs_diff_report",
   "version": "1.0",
-  "generatedAt": "2026-02-08T19:18:22.196Z",
-  "summary": "REQ-17/18/19 branding updates appear implemented: header, footer, and Home hero now show the existing Escoffiers wordmark image alongside visible \"Escoffiers\" text. However, the diff also introduces a \"Recruitment\" navigation link, which is a navigation structure change not requested and explicitly listed as a non-goal.",
-  "missing_requirements": [],
-  "hallucinated_features": [
+  "generatedAt": "2026-02-09T15:11:24.869Z",
+  "summary": "The diff updates the centralized branding configuration to point `BRANDING.logo` at an “Original uploaded logo” asset path, but there’s no direct evidence in the diff that all logo renderings (Header/Footer/Home hero) actually resolve to that centralized path or that other lingering references to a different logo were removed. Two non-product/meta files were also modified without being requested.",
+  "missing_requirements": [
     {
-      "description": "Added/introduced a \"Recruitment\" navigation link (navigation structure change).",
-      "reason": "BuildRequest non-goals explicitly include not changing site navigation structure or adding/removing pages; the diff shows a Recruitment link included in header and footer navigation.",
+      "id": "REQ-1",
+      "requirement": "Ensure all logo renderings across the frontend (Header, Footer, Home hero using BrandLogo variant=\"logo-with-text\") resolve to the originally uploaded logo via the single source of truth in frontend/src/config/branding.ts, with no remaining references causing a different/incorrect logo to appear.",
+      "reason": "Only frontend/src/config/branding.ts is shown as updated. The diff summary does not show any changes to Header/Footer/Home (or BrandLogo usage) or any cleanup of other potential logo references to guarantee all renderings use BRANDING.logo.",
       "evidence": [
-        "frontend/src/components/site/Header.tsx",
-        "frontend/src/components/site/Footer.tsx"
+        "frontend/src/config/branding.ts",
+        "frontend-file-summaries.txt (does not show actual code changes for Header/Footer/Home)"
       ]
     }
   ],
-  "confidence": 0.74,
+  "hallucinated_features": [
+    {
+      "description": "Updated project_state.json new_feature_requests/status metadata",
+      "reason": "The BuildRequest only asks to revert the logo asset via frontend branding configuration/usage; it does not request changes to project tracking/state files.",
+      "evidence": [
+        "project_state.json"
+      ]
+    },
+    {
+      "description": "Modified frontend-file-summaries.txt content",
+      "reason": "This summary/metadata file change is not part of the requested branding/logo implementation.",
+      "evidence": [
+        "frontend-file-summaries.txt"
+      ]
+    }
+  ],
+  "confidence": 0.64,
   "changed_files": [
     "frontend-file-summaries.txt",
-    "frontend/src/components/site/Footer.tsx",
-    "frontend/src/components/site/Header.tsx",
-    "frontend/src/pages/Home.tsx",
+    "frontend/src/config/branding.ts",
     "project_state.json"
   ]
 }

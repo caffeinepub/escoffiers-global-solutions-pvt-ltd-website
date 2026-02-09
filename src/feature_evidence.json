@@ -2,10 +2,10 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-update-the-site-header-branding-so-it-displays-both-the-escoffiers-logo-image-and-the-company-name-text-together-in-the-left-brand-area-while-keeping-the-entire-brand-area-clickable-and-linked-to-the-home-route-use-the-existing-logo-asset-at-assets-generated-escoffiers-wordmark-dim-1200x300-png-and-add-visible-text-reading-escoffiers-next-to-or-under-the-logo-ensuring-proper-vertical-centering-within-the-existing-h-16-header-and-no-layout-regressions-for-desktop-or-mobile",
-      "featureTitle": "Update the site header branding so it displays both the Escoffiers logo image and the company name text together in the left brand area, while keeping the entire brand area clickable and linked to the Home route (`/`). Use the existing logo asset at `/assets/generated/escoffiers-wordmark.dim_1200x300.png` and add visible text reading \"Escoffiers\" next to (or under) the logo, ensuring proper vertical centering within the existing `h-16` header and no layout regressions for desktop or mobile.",
+      "featureId": "feature-replace-the-currently-used-logo-asset-with-the-originally-uploaded-logo-the-one-provided-earlier-by-the-user-across-the-entire-frontend-by-updating-the-centralized-branding-configuration-and-ensuring-all-logo-renderings-resolve-to-that-original-asset",
+      "featureTitle": "Replace the currently used logo asset with the originally uploaded logo (the one provided earlier by the user) across the entire frontend by updating the centralized branding configuration and ensuring all logo renderings resolve to that original asset.",
       "files": [
-        "frontend/src/components/site/Header.tsx"
+        "frontend/src/config/branding.ts"
       ],
       "components": [
         "authorization@4.0.0",
@@ -16,45 +16,7 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-17"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-update-the-site-footer-branding-block-to-display-both-the-escoffiers-logo-image-and-the-company-name-text-together-escoffiers-while-continuing-to-use-the-existing-logo-asset-at-assets-generated-escoffiers-wordmark-dim-1200x300-png-the-name-text-should-be-visually-aligned-with-the-logo-and-remain-readable-across-responsive-breakpoints",
-      "featureTitle": "Update the site footer branding block to display both the Escoffiers logo image and the company name text together (\"Escoffiers\") while continuing to use the existing logo asset at `/assets/generated/escoffiers-wordmark.dim_1200x300.png`. The name text should be visually aligned with the logo and remain readable across responsive breakpoints.",
-      "files": [
-        "frontend/src/components/site/Footer.tsx"
-      ],
-      "components": [
-        "authorization@4.0.0",
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-18"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-update-the-home-page-hero-branding-block-so-it-displays-both-the-existing-escoffiers-logo-image-and-visible-company-name-text-escoffiers-together-near-the-top-of-the-hero-content-keep-the-current-hero-headline-and-page-layout-unchanged-aside-from-this-branding-addition",
-      "featureTitle": "Update the Home page hero branding block so it displays both the existing Escoffiers logo image and visible company name text (\"Escoffiers\") together near the top of the hero content. Keep the current hero headline and page layout unchanged aside from this branding addition.",
-      "files": [
-        "frontend/src/pages/Home.tsx"
-      ],
-      "components": [
-        "authorization@4.0.0",
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-19"
+        "REQ-1"
       ],
       "confidence": "high"
     }

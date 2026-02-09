@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Container from '../components/site/Container';
 import Section from '../components/site/Section';
+import BrandLogo from '../components/site/BrandLogo';
 import { usePageMeta } from '../hooks/usePageMeta';
 import { ChefHat, Users, TrendingUp, Award } from 'lucide-react';
 
@@ -18,21 +19,14 @@ export default function Home() {
       <section className="relative min-h-[600px] flex items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: 'url(/assets/generated/hero-bg.dim_1920x1080.png)' }}
+          style={{ backgroundImage: 'url(/assets/generated/hero-bg-clean.dim_1920x1080.png)' }}
         >
           <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/85 to-background/70" />
         </div>
         <Container className="relative z-10 py-20">
           <div className="max-w-3xl">
-            <div className="mb-8 flex items-center gap-4">
-              <img
-                src="/assets/generated/escoffiers-wordmark.dim_1200x300.png"
-                alt="Escoffiers Global Solutions"
-                className="h-16 w-auto"
-              />
-              <span className="text-3xl font-semibold text-foreground">
-                Escoffiers
-              </span>
+            <div className="mb-8">
+              <BrandLogo variant="logo-with-text" size="lg" linkTo={undefined} />
             </div>
             <h1 className="text-5xl md:text-6xl font-serif font-bold text-foreground mb-6 leading-tight">
               Building a Different Business Path
