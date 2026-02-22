@@ -3,6 +3,8 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
 import Recruitment from './pages/Recruitment';
+import Gallery from './pages/Gallery';
+import Team from './pages/Team';
 import Contact from './pages/Contact';
 import Inquiries from './pages/admin/Inquiries';
 import Header from './components/site/Header';
@@ -51,6 +53,18 @@ const recruitmentRoute = createRoute({
   component: Recruitment,
 });
 
+const galleryRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/gallery',
+  component: Gallery,
+});
+
+const teamRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/team',
+  component: Team,
+});
+
 const contactRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: '/contact',
@@ -72,6 +86,8 @@ const routeTree = rootRoute.addChildren([
   aboutRoute,
   servicesRoute,
   recruitmentRoute,
+  galleryRoute,
+  teamRoute,
   contactRoute,
   adminInquiriesRoute,
 ]);

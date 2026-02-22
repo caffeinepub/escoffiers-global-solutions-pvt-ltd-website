@@ -1,31 +1,56 @@
 {
   "schemaVersion": "1.0.0",
   "projectStateVersion": 3,
-  "summary": "New project",
-  "architectural_notes": [],
+  "summary": "Escoffiers Global Solutions website - hospitality and recruitment services site with multi-page navigation, branding, and employer login",
+  "architectural_notes": [
+    "Multi-page website with Home, About, Services, Recruitment, and Contact pages",
+    "Employer login functionality required",
+    "Escoffiers branding with green/orange color scheme",
+    "Service cards for Recruitment, Consulting, and Hospitality Services"
+  ],
   "known_issues": [
-    "Current/deployed logo is not the originally uploaded one; user requests reverting to the original logo."
+    "Previous deployment showed ICP default template instead of actual site",
+    "DNS propagation to www.escoffiers.com may take 24-48 hours after Hostinger records update",
+    "Browser caching may show old content even after successful deployment"
   ],
   "isFixRequest": true,
   "existing_features": [
     {
-      "id": "feature-replace-the-currently-used-logo-asset-with-the-originally-uploaded-logo-the-one-provided-earlier-by-the-user-across-the-entire-frontend-by-updating-the-centralized-branding-configuration-and-ensuring-all-logo-renderings-resolve-to-that-original-asset",
-      "title": "Replace the currently used logo asset with the originally uploaded logo (the one provided earlier by the user) across the entire frontend by updating the centralized branding configuration and ensuring all logo renderings resolve to that original asset.",
+      "id": "feature-restore-complete-escoffiers-global-solutions-branding-and-content-across-all-pages-ensuring-no-default-internet-computer-template-elements-remain",
+      "title": "Restore complete Escoffiers Global Solutions branding and content across all pages, ensuring no default Internet Computer template elements remain",
       "reqIds": [
         "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-maintain-all-existing-page-content-including-company-history-since-2013-service-offerings-restaurant-consulting-kitchen-design-recruitment-mission-vision-and-gallery-showcasing-project-categories",
+      "title": "Maintain all existing page content including company history since 2013, service offerings (restaurant consulting, kitchen design, recruitment), mission, vision, and gallery showcasing project categories",
+      "reqIds": [
+        "REQ-4"
       ],
       "version": 1
     }
   ],
   "new_feature_requests": [
     {
-      "id": "AR-1",
-      "summary": "Revert/apply the originally uploaded logo asset",
-      "reqIds": [],
+      "id": "AR-2",
+      "summary": "Ensure backend actor initializes correctly with user profile management and contact inquiry system with role-based access control",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Verify all existing features are functional: contact form submission, employer login with Internet Identity, admin inquiries dashboard, and multi-page navigation",
+      "reqIds": [
+        "REQ-3"
+      ],
       "status": "pending"
     }
   ],
-  "projectName": "Revert site branding to the originally uploaded logo asset",
+  "projectName": "Escoffiers Global Solutions",
   "clarification_mode": "instant",
   "clarification_rounds": 0
 }

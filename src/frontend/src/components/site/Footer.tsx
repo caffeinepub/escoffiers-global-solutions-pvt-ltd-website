@@ -36,6 +36,12 @@ export default function Footer() {
               <Link to="/recruitment" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                 Recruitment
               </Link>
+              <Link to="/gallery" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                Gallery
+              </Link>
+              <Link to="/team" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                Team
+              </Link>
               <Link to="/contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                 Contact
               </Link>

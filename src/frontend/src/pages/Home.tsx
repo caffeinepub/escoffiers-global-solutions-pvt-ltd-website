@@ -19,7 +19,7 @@ export default function Home() {
       <section className="relative min-h-[600px] flex items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: 'url(/assets/generated/hero-bg-clean.dim_1920x1080.png)' }}
+          style={{ backgroundImage: 'url(/assets/generated/hero-bg-clean-v2.dim_1920x1080.png)' }}
         >
           <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/85 to-background/70" />
         </div>

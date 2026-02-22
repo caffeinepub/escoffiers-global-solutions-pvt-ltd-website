@@ -1,47 +1,172 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Revert frontend logo branding to the originally uploaded asset",
+  "title": "Restore Escoffiers Global Solutions Website Frontend",
   "requirements": [
     {
       "id": "REQ-1",
-      "summary": "Switch the app-wide logo source back to the originally uploaded logo via centralized branding config, ensuring Header/Footer/Home hero all render the same original asset.",
+      "summary": "Restore complete Escoffiers Global Solutions branding and content across all pages, ensuring no default Internet Computer template elements remain",
       "acceptanceCriteria": [
-        "The logo shown in the Header (BrandLogo variant=\"logo-with-text\") matches the originally uploaded logo asset.",
-        "The logo shown in the Footer (BrandLogo variant=\"logo-with-text\") matches the originally uploaded logo asset.",
-        "The logo shown on the Home page hero (BrandLogo variant=\"logo-with-text\") matches the originally uploaded logo asset.",
-        "The app uses a single source of truth for the logo path (via frontend/src/config/branding.ts), with no remaining references that cause a different/incorrect logo to appear."
+        "Homepage displays Escoffiers branding with 'Building a Different Business Path' headline",
+        "All seven pages are accessible: Home, About, Services, Recruitment, Gallery, Team, Contact",
+        "No Internet Computer rainbow logo or 'Enter your name' form appears anywhere",
+        "Header and footer show Escoffiers logo and navigation"
       ],
       "file_operations": [
         {
-          "path": "frontend/public/assets/Escoffiers logo latest.jpg",
-          "operation": "rename",
-          "description": "Rename the originally uploaded logo asset to a stable, URL-safe filename for consistent usage across the app (e.g., rename to frontend/public/assets/escoffiers-logo-original.jpg)."
-        },
-        {
-          "path": "frontend/src/config/branding.ts",
+          "path": "frontend/src/pages/Home.tsx",
           "operation": "modify",
-          "description": "Update BRANDING.logo to reference the originally uploaded logo asset (e.g., /assets/escoffiers-logo-original.jpg) as the single source of truth for all logo renderings."
-        },
-        {
-          "path": "frontend/src/components/site/BrandLogo.tsx",
-          "operation": "modify",
-          "description": "Ensure all logo variants that render the logo image resolve their src exclusively from BRANDING.logo (no hardcoded/alternate logo paths), so Header/Footer/Home hero always display the centralized configured original asset."
+          "description": "Verify and restore the homepage hero section with 'Building a Different Business Path' headline, company introduction, and key features highlighting Escoffiers' restaurant consulting services. Ensure no default Internet Computer template content remains (no 'Enter your name' form or rainbow logo). The hero should use the existing branding assets from frontend/public/assets/generated/hero-bg-clean-v2.dim_1920x1080.png or similar."
         },
         {
           "path": "frontend/src/components/site/Header.tsx",
           "operation": "modify",
-          "description": "Verify Header uses BrandLogo (variant=\"logo-with-text\") without any alternate logo references so it reflects the updated BRANDING.logo everywhere."
+          "description": "Verify that the header displays the Escoffiers brand logo using the BrandLogo component with the correct asset path (frontend/public/assets/generated/escoffiers-circular-logo-official.dim_512x512.png or similar), navigation links to all seven pages (Home, About, Services, Recruitment, Gallery, Team, Contact), and the login button. Ensure no Internet Computer branding appears."
         },
         {
           "path": "frontend/src/components/site/Footer.tsx",
           "operation": "modify",
-          "description": "Verify Footer uses BrandLogo (variant=\"logo-with-text\") without any alternate logo references so it reflects the updated BRANDING.logo everywhere."
+          "description": "Verify that the footer displays Escoffiers branding with the logo, navigation links, contact information, and attribution. Ensure no default template content or Internet Computer branding remains."
+        },
+        {
+          "path": "frontend/src/pages/About.tsx",
+          "operation": "modify",
+          "description": "Verify the About page displays company history since 2013, service offerings (restaurant consulting, kitchen design, recruitment), mission, and vision statements with proper Escoffiers branding."
+        },
+        {
+          "path": "frontend/src/pages/Services.tsx",
+          "operation": "modify",
+          "description": "Verify the Services page displays all seven consulting service offerings (concept development, kitchen design, menu engineering, audits, training, franchising, turnaround) in a card grid layout with icons and descriptions."
+        },
+        {
+          "path": "frontend/src/pages/Recruitment.tsx",
+          "operation": "modify",
+          "description": "Verify the Recruitment page details domestic and international hiring services with documentation and compliance support information."
+        },
+        {
+          "path": "frontend/src/pages/Gallery.tsx",
+          "operation": "modify",
+          "description": "Verify the Gallery page showcases project categories (kitchen design, restaurant concepts, cloud kitchens) with statistics and success stories in a card-based layout."
+        },
+        {
+          "path": "frontend/src/pages/Team.tsx",
+          "operation": "modify",
+          "description": "Verify the Team page displays company expertise through feature cards with icons and descriptions."
+        },
+        {
+          "path": "frontend/src/pages/Contact.tsx",
+          "operation": "modify",
+          "description": "Verify the Contact page includes the contact form and contact details, ensuring proper form submission flow and success messaging."
+        },
+        {
+          "path": "frontend/src/config/branding.ts",
+          "operation": "modify",
+          "description": "Verify branding configuration exports correct paths to Escoffiers logo assets: circular logo (frontend/public/assets/generated/escoffiers-circular-logo-official.dim_512x512.png), wordmark (frontend/public/assets/generated/escoffiers-wordmark-official.dim_1200x300.png), favicon (frontend/public/assets/generated/favicon-escoffiers.dim_512x512.png), and OG image (frontend/public/assets/generated/og-image-escoffiers.dim_1200x630.png)."
+        },
+        {
+          "path": "frontend/index.html",
+          "operation": "modify",
+          "description": "Verify HTML entry point contains proper Escoffiers branding metadata, correct favicon links pointing to frontend/public/assets/generated/favicon-escoffiers.dim_512x512.png, Open Graph tags with Escoffiers-specific content, and no Internet Computer default template content."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Verify all existing features are functional: contact form submission, employer login with Internet Identity, admin inquiries dashboard, and multi-page navigation",
+      "acceptanceCriteria": [
+        "Contact form successfully submits inquiries and shows success message",
+        "Login button triggers Internet Identity authentication flow",
+        "Authenticated admin users can view inquiries dashboard",
+        "All navigation links route to correct pages without errors"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/contact/ContactForm.tsx",
+          "operation": "modify",
+          "description": "Verify the contact form component properly uses the useSubmitInquiry hook to submit inquiries via the backend actor, displays loading states during submission, and shows appropriate success/error messages. Ensure all form fields (name, email, phone, company, message) are present and functional."
+        },
+        {
+          "path": "frontend/src/hooks/useSubmitInquiry.ts",
+          "operation": "modify",
+          "description": "Verify the hook correctly calls the backend submitInquiry method with proper parameters (name, email, message), invalidates the inquiries query cache on success, and displays toast notifications for success and error states."
+        },
+        {
+          "path": "frontend/src/components/auth/LoginButton.tsx",
+          "operation": "modify",
+          "description": "Verify the authentication button component properly manages Internet Identity login/logout flow using the useInternetIdentity hook, displays appropriate loading states ('Logging in...', 'Login', 'Logout'), clears the query cache on logout, and handles authentication errors gracefully. Use the authorization component's guidance for proper login flow implementation."
+        },
+        {
+          "path": "frontend/src/hooks/useInternetIdentity.ts",
+          "operation": "modify",
+          "description": "Verify the Internet Identity context provider properly manages authentication state, persists identity to localStorage, validates delegation, and provides login/clear methods. Ensure anonymous principals are treated as guests per the authorization component requirements."
+        },
+        {
+          "path": "frontend/src/pages/admin/Inquiries.tsx",
+          "operation": "modify",
+          "description": "Verify the admin dashboard page properly uses the RequireAuth guard component to restrict access to authenticated users only, fetches all inquiries using the useInquiries hook, displays them in a table format, and provides a dialog for viewing individual inquiry details."
+        },
+        {
+          "path": "frontend/src/components/auth/RequireAuth.tsx",
+          "operation": "modify",
+          "description": "Verify the route guard component properly checks authentication status using the useInternetIdentity hook, displays an authentication prompt with sign-in button for unauthenticated users per the authorization component guidance, and renders children for authenticated users."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Verify the router configuration includes all seven main routes (Home, About, Services, Recruitment, Gallery, Team, Contact) and the admin Inquiries route, all wrapped in the shared layout with Header, Footer, and Toaster. Ensure navigation between pages works correctly without errors."
+        },
+        {
+          "path": "frontend/src/components/admin/AdminNavLink.tsx",
+          "operation": "modify",
+          "description": "Verify the conditional admin navigation link only renders when the user is authenticated, properly checks authentication state using the useInternetIdentity hook, and supports both desktop and mobile layouts."
+        },
+        {
+          "path": "frontend/src/hooks/useActor.ts",
+          "operation": "modify",
+          "description": "Verify the actor hook properly creates and manages backend actor instances with Internet Identity authentication, invalidates dependent queries on identity changes, and handles the first admin initialization automatically per the authorization component requirements."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Maintain all existing page content including company history since 2013, service offerings (restaurant consulting, kitchen design, recruitment), mission, vision, and gallery showcasing project categories",
+      "acceptanceCriteria": [
+        "About page displays company history and founding year 2013",
+        "Services page shows all seven consulting service offerings with icons",
+        "Recruitment page details domestic and international hiring services",
+        "Gallery page showcases kitchen design, restaurant concepts, and cloud kitchens",
+        "Team page displays company expertise through feature cards"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/About.tsx",
+          "operation": "modify",
+          "description": "Verify the About page maintains complete content describing Escoffiers Global Solutions Pvt Ltd's history since 2013, all service offerings (restaurant consulting, kitchen design, recruitment), mission statement, and vision statement with proper formatting and layout."
+        },
+        {
+          "path": "frontend/src/pages/Services.tsx",
+          "operation": "modify",
+          "description": "Verify the Services page maintains all seven consulting service offerings: concept development, kitchen design, menu engineering, audits, training, franchising, and turnaround management. Each service should be displayed in a card with an icon and detailed description in a responsive grid layout."
+        },
+        {
+          "path": "frontend/src/pages/Recruitment.tsx",
+          "operation": "modify",
+          "description": "Verify the Recruitment page maintains detailed information about both domestic and international hiring services for the hospitality industry, including documentation requirements, compliance support, and service differentiators."
+        },
+        {
+          "path": "frontend/src/pages/Gallery.tsx",
+          "operation": "modify",
+          "description": "Verify the Gallery page maintains project showcases for kitchen design, restaurant concepts, and cloud kitchens categories, including statistics and success stories presented in an engaging card-based layout."
+        },
+        {
+          "path": "frontend/src/pages/Team.tsx",
+          "operation": "modify",
+          "description": "Verify the Team page maintains feature cards showcasing company expertise areas: Industry Expertise, Results-Driven approach, Collaborative Approach, and any additional expertise areas, each with appropriate icons and descriptions."
         },
         {
           "path": "frontend/src/pages/Home.tsx",
           "operation": "modify",
-          "description": "Verify the Home hero uses BrandLogo (variant=\"logo-with-text\") without any alternate logo references so it reflects the updated BRANDING.logo everywhere."
+          "description": "Verify the homepage maintains the hero section with 'Building a Different Business Path' or similar headline, company introduction highlighting the 2013 founding and restaurant consulting focus, and key features section showcasing Escoffiers' hospitality services."
         }
       ]
     }

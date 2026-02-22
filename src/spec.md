@@ -1,10 +1,13 @@
 # Specification
 
 ## Summary
-**Goal:** Revert the site branding so the frontend uses the originally uploaded logo asset everywhere the logo appears.
+**Goal:** Rebuild the Escoffiers Global Solutions website to fix deployment issues and restore complete branding across all pages.
 
 **Planned changes:**
-- Update the centralized branding configuration (`frontend/src/config/branding.ts`) to point to the originally uploaded logo asset.
-- Ensure all instances of `BrandLogo` with `variant="logo-with-text"` (Header, Footer, and Home hero) resolve to the same configured logo path, with no remaining references to any other logo file.
+- Restore Escoffiers Global Solutions branding and content across all seven pages (Home, About, Services, Recruitment, Gallery, Team, Contact)
+- Remove all Internet Computer default template elements including rainbow logo and "Enter your name" form
+- Fix backend actor initialization to ensure user profile management and contact inquiry system work correctly
+- Verify contact form submission, Internet Identity login, admin inquiries dashboard, and multi-page navigation are functional
+- Maintain existing content including company history since 2013, service offerings, mission, vision, and gallery
 
-**User-visible outcome:** The Header, Footer, and Home page hero all display the originally uploaded logo (logo-with-text), consistently across the site.
+**User-visible outcome:** Users will see the complete Escoffiers Global Solutions website with proper branding, functional contact form, employer login, and all seven pages accessible without any default Internet Computer template elements appearing.

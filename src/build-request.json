@@ -1,35 +1,93 @@
 {
   "kind": "build_request",
-  "title": "Revert site branding to the originally uploaded logo asset",
-  "priority": "normal",
+  "title": "Rebuild Escoffiers website to fix deployment issue",
+  "projectName": "Escoffiers Global",
+  "priority": "high",
   "requirements": [
     {
       "id": "REQ-1",
-      "text": "Replace the currently used logo asset with the originally uploaded logo (the one provided earlier by the user) across the entire frontend by updating the centralized branding configuration and ensuring all logo renderings resolve to that original asset.",
-      "target": "frontend",
+      "text": "Restore complete Escoffiers Global Solutions branding and content across all pages, ensuring no default Internet Computer template elements remain",
+      "target": "both",
       "source": {
         "messageIds": [
-          "msg-4"
+          "msg-recent"
         ],
         "quotes": [
-          "Please apply the original logo which i uploaded earlier"
+          "This is NOT your Escoffiers website - this is the Internet Computer platform's default template page"
         ]
       },
       "acceptanceCriteria": [
-        "The logo shown in the Header (BrandLogo variant=\"logo-with-text\") matches the originally uploaded logo asset.",
-        "The logo shown in the Footer (BrandLogo variant=\"logo-with-text\") matches the originally uploaded logo asset.",
-        "The logo shown on the Home page hero (BrandLogo variant=\"logo-with-text\") matches the originally uploaded logo asset.",
-        "The app uses a single source of truth for the logo path (via frontend/src/config/branding.ts), with no remaining references that cause a different/incorrect logo to appear."
+        "Homepage displays Escoffiers branding with 'Building a Different Business Path' headline",
+        "All seven pages are accessible: Home, About, Services, Recruitment, Gallery, Team, Contact",
+        "No Internet Computer rainbow logo or 'Enter your name' form appears anywhere",
+        "Header and footer show Escoffiers logo and navigation"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Ensure backend actor initializes correctly with user profile management and contact inquiry system with role-based access control",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-recent"
+        ],
+        "quotes": [
+          "Failed to complete properly",
+          "has a backend initialization issue"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Backend actor starts successfully on deployment",
+        "Public inquiry submission endpoint is functional",
+        "Admin-only inquiry viewing is accessible for authenticated users",
+        "No deployment errors or initialization failures occur"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Verify all existing features are functional: contact form submission, employer login with Internet Identity, admin inquiries dashboard, and multi-page navigation",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-recent"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Contact form successfully submits inquiries and shows success message",
+        "Login button triggers Internet Identity authentication flow",
+        "Authenticated admin users can view inquiries dashboard",
+        "All navigation links route to correct pages without errors"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Maintain all existing page content including company history since 2013, service offerings (restaurant consulting, kitchen design, recruitment), mission, vision, and gallery showcasing project categories",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-recent"
+        ]
+      },
+      "acceptanceCriteria": [
+        "About page displays company history and founding year 2013",
+        "Services page shows all seven consulting service offerings with icons",
+        "Recruitment page details domestic and international hiring services",
+        "Gallery page showcases kitchen design, restaurant concepts, and cloud kitchens",
+        "Team page displays company expertise through feature cards"
       ]
     }
   ],
   "constraints": [
-    "Do not modify any files under frontend/src/components/ui (read-only).",
-    "Do not edit immutable hook files (frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useActor.ts) or frontend/src/main.tsx."
+    "Preserve existing backend schema and actor architecture",
+    "Maintain all existing routes and navigation structure",
+    "Keep Internet Identity authentication implementation unchanged",
+    "Preserve branding configuration and asset paths"
   ],
   "nonGoals": [
-    "Redesigning or generating a new logo.",
-    "Changing the wordmark, favicon, or Open Graph image unless they are also part of the user’s originally uploaded logo set and explicitly needed to match what was uploaded."
+    "Adding new features or pages beyond existing seven pages",
+    "Changing color scheme or visual design",
+    "Modifying domain configuration or DNS settings",
+    "Adding new backend functionality beyond existing inquiry system"
   ],
   "imageRequirements": {
     "required": [],
